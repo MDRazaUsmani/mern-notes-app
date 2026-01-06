@@ -6,7 +6,7 @@ dotenv.config();
 
 const rateLimit = new Ratelimit({
     redis: Redis.fromEnv(), // read token and URL from the .evn file
-    limiter: Ratelimit.slidingWindow(10,"20 s") // limit to 10 requests per 20 seconds (typically around 100/min)
+    limiter: Ratelimit.slidingWindow(100,"60 s") // limit to 10 requests per 20 seconds (typically around 100/min)
 });
 
 export default rateLimit;
